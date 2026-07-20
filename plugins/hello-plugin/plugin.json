@@ -1,0 +1,5 @@
+{
+  "name": "HelloPlugin",
+  "version": "1.0",
+  "mainClass": "ru.tianji.plugin.plugins.HelloPlugin"
+}
