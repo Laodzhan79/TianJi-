@@ -1,44 +1,27 @@
 package ru.tianji.plugin;
 
 import ru.tianji.logging.Logger;
-import ru.tianji.plugin.plugins.HelloPlugin;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class PluginManager {
 
-    private final List<Plugin> plugins = new ArrayList<>();
+    private final PluginRegistry registry =
+            new PluginRegistry();
 
 
     public void loadPlugins() {
 
         Logger.info("Loading plugins...");
 
-        registerPlugin(new HelloPlugin());
+        registry.discover();
 
         startPlugins();
 
     }
 
 
-    private void registerPlugin(Plugin plugin) {
-
-        plugins.add(plugin);
-
-        Logger.info(
-                "Plugin registered: "
-                        + plugin.getName()
-                        + " v"
-                        + plugin.getVersion()
-        );
-
-    }
-
-
     private void startPlugins() {
 
-        for (Plugin plugin : plugins) {
+        for (Plugin plugin : registry.getPlugins()) {
 
             plugin.start();
 
@@ -49,7 +32,7 @@ public class PluginManager {
 
     public void stopPlugins() {
 
-        for (Plugin plugin : plugins) {
+        for (Plugin plugin : registry.getPlugins()) {
 
             plugin.stop();
 
