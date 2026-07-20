@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+import ru.tianji.logging.Logger;
 public class DatabaseManager {
 
     private static final String DB_DIRECTORY = "database";
@@ -20,12 +20,12 @@ public class DatabaseManager {
 
             createTables(connection);
 
-            System.out.println("SQLite initialized.");
+            Logger.info("SQLite initialized.");
 
         } catch (SQLException e) {
 
-            System.err.println("Database initialization failed.");
-            e.printStackTrace();
+            Logger.error("Database initialization failed.");
+	    e.printStackTrace();
 
         }
 

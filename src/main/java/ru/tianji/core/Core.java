@@ -1,16 +1,18 @@
 package ru.tianji.core;
 
 import ru.tianji.database.DatabaseManager;
+import ru.tianji.logging.Logger;
 
 public class Core {
 
+
     public void start() {
 
-        System.out.println("Core initialization started.");
+        Logger.info("Core initialization started.");
 
         initializeDatabase();
 
-        System.out.println("Core initialization completed.");
+        Logger.info("Core initialization completed.");
 
     }
 
