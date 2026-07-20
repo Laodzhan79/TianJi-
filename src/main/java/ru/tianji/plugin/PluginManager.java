@@ -1,20 +1,25 @@
 package ru.tianji.plugin;
 
 import ru.tianji.logging.Logger;
-
+import ru.tianji.plugin.loader.PluginLoader;
 public class PluginManager {
 
     private final PluginRegistry registry =
             new PluginRegistry();
 
+	private final PluginLoader loader =
+            new PluginLoader();
 
-    public void loadPlugins() {
+public void loadPlugins() {
 
-        Logger.info("Loading plugins...");
+    Logger.info("Loading plugins...");
 
-        registry.discover();
+    loader.load();
 
-        startPlugins();
+    registry.discover();
+
+    startPlugins();
+
 
     }
 
