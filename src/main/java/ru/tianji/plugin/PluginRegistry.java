@@ -1,7 +1,6 @@
 package ru.tianji.plugin;
 
 import ru.tianji.logging.Logger;
-import ru.tianji.plugin.plugins.HelloPlugin;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +14,7 @@ public class PluginRegistry {
 
         Logger.info("Discovering plugins...");
 
-        register(new HelloPlugin());
-
+        Logger.info("No external plugins loaded yet.");
         Logger.info(
                 "Plugins discovered: "
                         + plugins.size()
