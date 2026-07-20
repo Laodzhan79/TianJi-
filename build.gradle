@@ -13,6 +13,7 @@ repositories {
 dependencies {
     implementation 'org.xerial:sqlite-jdbc:3.50.3.0'
 
+    implementation project(':api')
     testImplementation 'org.junit.jupiter:junit-jupiter:5.13.4'
 }
 
@@ -32,4 +33,11 @@ tasks.withType(JavaCompile).configureEach {
 
 test {
     useJUnitPlatform()
+}
+subprojects {
+
+    repositories {
+        mavenCentral()
+    }
+
 }

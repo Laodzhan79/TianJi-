@@ -1,1 +1,4 @@
 rootProject.name = 'TianJi'
+
+include 'api'
+include 'plugins:hello-plugin'

@@ -6,7 +6,6 @@ public class PluginMetadata {
     private final String version;
     private final String author;
     private final String description;
-    private boolean enabled;
 
 
     public PluginMetadata(
@@ -20,7 +19,6 @@ public class PluginMetadata {
         this.version = version;
         this.author = author;
         this.description = description;
-        this.enabled = true;
 
     }
 
@@ -42,16 +40,6 @@ public class PluginMetadata {
 
     public String getDescription() {
         return description;
-    }
-
-
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
     }
 
 }
