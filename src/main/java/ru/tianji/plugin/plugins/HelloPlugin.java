@@ -2,6 +2,7 @@ package ru.tianji.plugin.plugins;
 
 import ru.tianji.logging.Logger;
 import ru.tianji.plugin.Plugin;
+import ru.tianji.plugin.config.PluginConfiguration;
 import ru.tianji.plugin.metadata.PluginMetadata;
 
 public class HelloPlugin implements Plugin {
@@ -12,8 +13,12 @@ public class HelloPlugin implements Plugin {
                     "HelloPlugin",
                     "1.0",
                     "TianJi Team",
-                    "First test plugin"
+                    "First configurable plugin"
             );
+
+
+    private final PluginConfiguration configuration =
+            new PluginConfiguration();
 
 
     @Override
@@ -27,9 +32,22 @@ public class HelloPlugin implements Plugin {
     @Override
     public void start() {
 
+        configuration.load(
+                "plugins/hello/config.properties"
+        );
+
+
+        String message =
+                configuration.get(
+                        "plugin.message",
+                        "Default message"
+                );
+
+
         Logger.info(
                 metadata.getName()
-                + " started."
+                + ": "
+                + message
         );
 
     }
