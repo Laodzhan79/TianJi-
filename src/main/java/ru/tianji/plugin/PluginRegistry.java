@@ -31,7 +31,7 @@ public class PluginRegistry {
 
         Logger.info(
                 "Plugin added to registry: "
-                        + plugin.getName()
+                        + plugin.getMetadata().getName()
         );
 
     }

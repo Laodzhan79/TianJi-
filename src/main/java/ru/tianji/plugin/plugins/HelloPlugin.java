@@ -2,22 +2,24 @@ package ru.tianji.plugin.plugins;
 
 import ru.tianji.logging.Logger;
 import ru.tianji.plugin.Plugin;
+import ru.tianji.plugin.metadata.PluginMetadata;
 
 public class HelloPlugin implements Plugin {
 
 
+    private final PluginMetadata metadata =
+            new PluginMetadata(
+                    "HelloPlugin",
+                    "1.0",
+                    "TianJi Team",
+                    "First test plugin"
+            );
+
+
     @Override
-    public String getName() {
+    public PluginMetadata getMetadata() {
 
-        return "HelloPlugin";
-
-    }
-
-
-    @Override
-    public String getVersion() {
-
-        return "1.0";
+        return metadata;
 
     }
 
@@ -25,7 +27,10 @@ public class HelloPlugin implements Plugin {
     @Override
     public void start() {
 
-        Logger.info("HelloPlugin started.");
+        Logger.info(
+                metadata.getName()
+                + " started."
+        );
 
     }
 
@@ -33,7 +38,10 @@ public class HelloPlugin implements Plugin {
     @Override
     public void stop() {
 
-        Logger.info("HelloPlugin stopped.");
+        Logger.info(
+                metadata.getName()
+                + " stopped."
+        );
 
     }
 

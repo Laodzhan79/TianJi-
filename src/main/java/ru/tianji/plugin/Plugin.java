@@ -1,10 +1,10 @@
 package ru.tianji.plugin;
 
+import ru.tianji.plugin.metadata.PluginMetadata;
+
 public interface Plugin {
 
-    String getName();
-
-    String getVersion();
+    PluginMetadata getMetadata();
 
     void start();
 
