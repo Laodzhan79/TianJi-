@@ -23,11 +23,10 @@ public class PluginConfiguration {
 
                 Logger.error(
                         "Plugin configuration not found: "
-                        + path
+                                + path
                 );
 
                 return;
-
             }
 
 
@@ -35,7 +34,7 @@ public class PluginConfiguration {
 
             Logger.info(
                     "Plugin configuration loaded: "
-                    + path
+                            + path
             );
 
 

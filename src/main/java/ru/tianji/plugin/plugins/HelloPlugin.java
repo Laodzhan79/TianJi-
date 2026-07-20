@@ -46,8 +46,8 @@ public class HelloPlugin implements Plugin {
 
         Logger.info(
                 metadata.getName()
-                + ": "
-                + message
+                        + ": "
+                        + message
         );
 
     }
@@ -58,7 +58,7 @@ public class HelloPlugin implements Plugin {
 
         Logger.info(
                 metadata.getName()
-                + " stopped."
+                        + " stopped."
         );
 
     }
