@@ -1,0 +1,10 @@
+/build/
+/release/
+/logs/
+/*.db
+/*.sqlite
+*.class
+*.jar
+*.log
+.idea/
+.vscode/
