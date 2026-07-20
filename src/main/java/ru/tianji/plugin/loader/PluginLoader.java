@@ -8,17 +8,30 @@ import java.util.List;
 
 public class PluginLoader {
 
-    private final List<Plugin> loadedPlugins = new ArrayList<>();
+
+    private final List<Plugin> loadedPlugins =
+            new ArrayList<>();
+
+
+    private final PluginDirectoryScanner scanner =
+            new PluginDirectoryScanner();
 
 
     public List<Plugin> load() {
 
-        Logger.info("Plugin loader started.");
+        Logger.info(
+                "Plugin loader started."
+        );
+
+
+        scanner.scan();
+
 
         Logger.info(
                 "Loaded plugins: "
                         + loadedPlugins.size()
         );
+
 
         return loadedPlugins;
 
